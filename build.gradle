@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.hibernate:hibernate-core:5.6.9.Final' // Versión de Hibernate, puede variar
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.springframework:spring-context:5.3.23' // Para gestión de transacciones
+    implementation 'org.springframework:spring-orm:5.3.23'    // Para integración con Spring ORM
+
+    // Base de datos H2 para desarrollo
+    runtimeOnly 'com.h2database:h2:1.4.200'
+}
+
+test {
+    useJUnitPlatform()
+}
